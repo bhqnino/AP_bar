@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hang-Tw">
+<head>
+<meta charset="utf-8">
+
+<title>ap bar</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<!-- icons
+<link rel="icon" href="img/favicon.ico">
+<link rel="icon" sizes="192x192" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png"> -->
+
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css?family=Cardo" rel="stylesheet">
+
+<!-- stylesheets -->
+<link rel="stylesheet" href="css/base.css" media="all">
+<link rel="stylesheet" href="./fontawesome-free-5.15.3-web/css/all.css">
+<style>
+	@charset "utf-8";
+/*
+=======================================
+  Reset CSS
+=======================================
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, main, menu, nav, section, summary,
+time, mark, audio, video{
+  margin:0;
+  padding:5px;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,main,menu,nav,section{
+  display:block;
+}
+
+html{
+  -webkit-text-size-adjust: 100%;
+}
+
+body{
+  color: #59220d;
+  line-height: 1.5;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+img{
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,ol{
+  list-style-type: none;
+}
+
+table {
+  border-collapse: collapse; 
+  border-spacing: 0;
+}
+
+img, input, select, textarea {
+  vertical-align: middle;
+}
+
+a {
+  color: #59220d;
+  transition: 0.5s;
+}
+a:hover {
+  color: #d53e04;
+}
+a:hover img {
+  opacity: 0.7;
+}
+
+/*
+=========================================
+  Base Layout
+=========================================
+*/
+
+/*container*/
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding-left: 5px;
+  padding-right: p5x;
+}
+
+/*grid*/
+@media screen and (min-width: 768px) {
+  /*通用2欄,3欄指定*/
+  .pc-grid-col2,
+  .pc-grid-col3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  /*2欄的欄寬*/
+  .pc-grid-col2 .col {
+    width: 48.9361%;
+  }
+  /*3欄的欄寬*/
+  .pc-grid-col3 .col {
+    width: 31.9148%;
+  }
+}
+
+/*
+=========================================
+  Modules（Block）
+=========================================
+*/
+
+/*header
+--------------------*/
+.header {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  /* background: url(./images/slide_2.jpg) center center no-repeat; */
+  background-color: rgb(94, 238, 238) ;
+  background-size: cover;
+}
+.header-title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.header-logo {
+  margin-bottom: 20px;
+}
+.header-msg {
+  line-height: 1.8;
+}
+
+
+
+
+
+/*global navigation
+--------------------*/
+.gnav {
+width: 100%;
+  height: auto;
+  background: #d8c7a0;
+
+}
+.gnav ul {
+  display: flex;
+}
+.gnav li {
+  width: 25%;
+}
+.gnav a {
+  display: block;
+  padding: 15px 0;
+  color: #fff;
+    text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+.gnav a:hover {
+  background: #ecdfc2;
+}
+
+/*section
+--------------------*/
+.section {
+  margin: 40px 0;
+}
+
+/*Pickup Menu
+--------------------*/
+.menu-list {
+  text-align: center;
+}
+.menu-list li {
+  margin-bottom: 20px;
+  border: 1px solid #d8c7a0;
+  box-sizing: border-box;
+}
+.menu-text {
+  margin: 15px;
+}
+
+/*information
+--------------------*/
+.info-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.info-list dt {
+  width: 30%;
+  padding: 10px 0;
+  border-top: 1px #d8c7a0 dotted;
+}
+.info-list dd {
+  width: 70%;
+  padding: 10px 0;
+  border-top: 1px #d8c7a0 dotted;
+}
+.info-list :first-of-type {
+  border-top: none;
+}
+
+/*staff
+--------------------*/
+#staff {
+  padding: 20px;
+  background: 
+repeating-linear-gradient(135deg, #fff, #fff 10px, #fcf2d9 10px, #fcf2d9 20px);
+  box-sizing: border-box;
+}
+.staff-photo {
+  width: 59.7014%; /* 400÷670×100% */
+  margin: 0 auto 20px;
+}
+@media screen and (min-width: 768px) {
+  .staff-photo {
+    width: 54.7619%;/* 230÷420×100% */
+  }
+}
+.staff-heading{
+  display: block;
+  padding: 8px 10px;
+  margin: 0 auto 10px;
+  border-radius: 2em;
+  background: #d8c7a0;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+/*Google Map
+--------------------*/
+.map {
+  position: relative;
+  padding-top: 50%; 
+}
+.map iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*access
+--------------------*/
+.add {
+  text-align: center;
+  font-style: normal;
+  font-size: 12px;
+}
+.add p {
+  margin-top: 15px;
+}
+
+.btn-tel {
+  display: inline-block;
+  width: 70%;
+  max-width: 200px;
+  padding: 8px 0;
+  border-radius: 2em;
+  background: #d8c7a0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/*banner
+--------------------*/
+.banner-list li img{
+  border: #fff 5px solid;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/*footer
+--------------------*/
+.footer{
+  padding: 20px 0;
+  background: #d8c7a0;
+}
+.footer-info-ph img{
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+  }
+.footer-info-list{
+  margin-bottom: 20px;
+}
+.footer-info-list dt{
+  clear: left;
+  float: left;
+  width: 7em;
+  margin-bottom: 10px;
+}
+.footer-info-list dd{
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 480px) {
+  /* .footer-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-info-ph {
+    width: 31.9148%;
+  }
+  .footer-info-data {
+    width: 65.9574%;
+  }
+} */
+
+
+
+
+
+
+/*SNS*/
+.sns{
+  margin-bottom: 15px;
+  text-align: center;
+}
+.sns li{
+  display: inline-block;
+}
+.sns a{
+  display: block;
+  padding: 10px 20px;
+  background: #fff;
+  color: #d8c7a0;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 20px; 
+}
+.sns a:hover{
+  opacity: 0.7;
+}
+
+/*copyright*/
+.copyright {
+  text-align: center;
+}
+
+/*pagetop*/
+.pagetop{
+  width: 45px;
+  height: 45px;
+  /* position: fixed; */
+  /* right: auto; */
+  bottom: 70px;
+}
+.pagetop a {
+  display: block;
+  width: 45px;
+  height: 45px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+}
+.pagetop a:hover {
+  background: rgba(255,255,255,0.8);
+  color: #59220d;
+}
+.pagetop a::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: auto;
+  border-top: 1px solid #59220d;
+  border-right: 1px solid #59220d;
+  transform: rotate(-45deg);
+}
+
+/*
+=========================================
+  Modules（Parts）
+=========================================
+*/
+
+/*Heading
+--------------------*/
+.heading{
+  margin-bottom: 15px;
+  border-bottom: #4d941a 1px solid;
+  color: #4d941a;
+  font-size: 20px;
+  font-weight: normal;
+  overflow: hidden;
+  position: relative;
+}
+
+/*
+=========================================
+  Utilities
+=========================================
+*/
+
+/* 邊界
+---------------------------------*/
+.mb0{ margin-bottom: 0 !important;}
+.mb5{ margin-bottom: 5px !important;}
+.mb10{ margin-bottom: 10px !important;}
+.mb15{ margin-bottom: 15px !important;}
+.mb20{ margin-bottom: 20px !important;}
+.mb25{ margin-bottom: 25px !important;}
+.mb30{ margin-bottom: 30px !important;}
+.mb35{ margin-bottom: 35px !important;}
+.mb40{ margin-bottom: 40px !important;}
+.mb45{ margin-bottom: 45px !important;}
+.mb50{ margin-bottom: 50px !important;}
+
+/* 水平對齊
+---------------------------------*/
+.ta-l{ text-align: left; }
+.ta-r{ text-align: right; }
+.ta-c{ text-align: center; }
+
+
+/* 設定／解除Float
+---------------------------------*/
+.fl{ float:left; }
+.fr{ float:right; }
+.fl-img{ float: left; margin-right: 10px; margin-bottom: 10px;}
+.fr-img{ float: right; margin-left: 10px; margin-bottom: 10px;}
+.clear{ clear:both; }
+
+/* clearfix */
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*icon fonts*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?mp503x');
+  src:  url('fonts/icomoon.eot?mp503x#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?mp503x') format('truetype'),
+    url('fonts/icomoon.woff?mp503x') format('woff'),
+    url('fonts/icomoon.svg?mp503x#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-pinterest:before {
+  content: "\ead1";
+}
+
+
+
+</style>
+
+
+
+</head>
+<body>
+<header id="header" class="header">
+  <div class="container">
+    <div class="header-title">
+    <h1 class="header-logo"><a href="index.html"><img src="./images/LOGO.png" alt="香醇紅茶與手做烘焙點心的店 Cafe Leaf"></a></h1>
+    <p class="header-msg">放緩腳步，享受一下難得悠閒的早晨時光吧～</p>
+    </div>
+  </div>
+</header><!-- /#header -->
+
+<nav id="gnav" class="gnav">
+  <ul class="container">
+    <li><a href="#">Home</a></li>
+    <li><a href="https://www.apbar.com.tw/about.php">Concept</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="#access">Access</a></li>
+  </ul>
+</nav><!-- /#gnav -->
+
+<main id="contents" class="contents">
+  <div class="container">
+
+  <section id="menu" class="section">
+    <h2 class="heading">Pickup Menu <a href="#" class="more">more</a></h2>
+    <ul class="pc-grid-col3 menu-list">
+      <li class="col">
+        <img src="./images/menu_1.jpg" alt="">
+        
+      </li>
+      <li class="col">
+        <img src="./images/menu_2.jpg" alt="">
+        
+      </li>
+      <li class="col">
+        <img src="./images/menu_3.jpg" alt="">
+        
+      </li>
+      <li class="col">
+        <img src="./images/menu_4.jpg" alt="">
+        
+      </li>
+      <li class="col">
+        <img src="./images/menu_5.jpg" alt="">
+        
+      </li>
+      <li class="col">
+        <img src="./images/menu_6.jpg" alt="">
+        
+      </li>
+    </ul>
+  </section><!-- /#menu -->
+
+  <div class="pc-grid-col2">
+    <section id="info" class="col section">
+      <h2 class="heading">Information <a href="#" class="more">more</a></h2>
+      <dl class="info-list">
+        <dt>2021-07-28</dt>
+        <dd><a href="#">重磅聯名Ｘ安東尼義大利麵</a></dd>
+        <dt>2021-05-01</dt>
+        <dd><a href="#">功夫打底的“庶民味” 和風沙拉</a></dd>
+        <dt>2021-03-03</dt>
+        <dd><a href="#">台北通化店，外送等你線上點餐喔～</a></dd>
+      </dl>
+    </section><!-- /#info -->
+
+    <section id="staff" class="col section">
+      <div class="staff-photo"><img src="https://www.apbar.com.tw/boya/admin/img/%E5%AE%9C%E8%98%AD%E9%99%BD%E6%98%8E_%E5%B7%A5%E4%BD%9C%E5%8D%80%E5%9F%9F%201.jpg" alt=""></div>
+      <div class="staff-msg">
+        <h2 class="staff-heading">開幕消息</h2>
+        <p class="staff-text">宜蘭陽明店 宜蘭早午餐 叫我第一名~</p>
+      </div>
+    </section><!-- /#staff -->
+  </div><!-- /.grid -->
+
+  <section id="access" class="section">
+    <h2 class="heading">Access</h2>
+    <div class="map">
+     
+		 <iframe src="https://www.youtube.com/embed/r9Goh_o4PFc"width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> 
+    
+		
+	
+	
+	</div><!-- /.map -->
+    <div class="add">
+   
+      <p><a href=" " class="btn-tel">人氣部落客推薦</a></p>
+    </div>
+  </section><!-- /#intro -->
+
+  <aside id="banner" class="section">
+    <ul class="pc-grid-col3 banner-list">
+      <li class="col"><a href="#"><img src="./images/aside_1.jpg" alt=""></a></li>
+      <li class="col"><a href="#"><img src="./images/aside_2.jpg" alt=""></a></li>
+      <li class="col"><a href="#"><img src="./images/aside_3.jpg" alt=""></a></li>
+    </ul>
+  </aside><!-- /#banner -->
+
+  </div><!-- /.container -->
+</main><!-- /#main -->
+
+
+<footer id="footer" class="footer">
+  <div class="container">
+    <section class="footer-info">
+      <div class="footer-info-ph"><img src="./images/LOGO.png" alt="店面外觀"></div>
+      <div class="footer-info-data">
+        <h2 class="footer-info-title"><img src="./images/nav_logo.png" alt="Cafe Leaf"></h2>
+        <dl class="footer-info-list">
+          
+          <dd>PBar義大利早午餐紅茶館 ｜ 亞譜熱壓三明治廚房 ｜早安,亞譜 ｜ Copyright </dd>
+         
+          <dd>03-0000-0000</dd>
+         
+          <dd>版權所有 轉載必究</dd>
+       
+          <dd>©AP Bar CO., Ltd All Righty Reserved.</dd>
+        </dl>
+      </div>
+    </section>
+    <!-- <ul class="sns">
+      <li><a href="#" class="icon-twitter" title="Twitter"></a></li>
+      <li><a href="#" class="icon-facebook" title="Facebook"></a></li>
+      <li><a href="#" class="icon-pinterest" title="Pinterst"></a></li>
+    </ul> -->
+    <p class="pagetop"><a href="#header">TOP</a></p>
+  </div><!-- /.container -->
+</footer><!-- /#footer -->
+</body>
+</html>
